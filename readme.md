@@ -4,11 +4,19 @@
 
 ## Usage
 
+> Requirements: It runs on Docker using [`docker-compose`](https://docs.docker.com/compose/).
+
+First, copy the example `.env` and modify it to fit your needs.
+
 ```bash
 cp .env.example .env
 ```
 
-Modify `.env` to fit your needs.
+Now run it:
+
+```bash
+docker-compose up
+```
 
 ## Features
 
