@@ -2,6 +2,14 @@
 
 > Educational purposes only
 
+## Usage
+
+```bash
+cp .env.example .env
+```
+
+Modify `.env` to fit your needs.
+
 ## Features
 
 -  **Plex**: A media server that allows you to stream your media files to various devices.
