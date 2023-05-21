@@ -20,14 +20,14 @@ docker-compose up
 
 ## Features
 
--  **Plex**: A media server that allows you to stream your media files to various devices.
--  **Sonarr**: It can monitor multiple RSS feeds for new episodes of TV shows and will grab, sort and rename them.
--  **Radarr**: It can monitor multiple RSS feeds for new movies and will grab, sort and rename them.
--  **Overseerr**: It allows users to request new content and tracks the status of those requests.
--  **Jackett**: A proxy server that allows you to access various torrent trackers without having to sign up for each one individually.
--  **Transmission**: A BitTorrent client that allows you to download and upload files over the BitTorrent protocol.
--  **TimeMachine**: A network backup system that allows you to back up your data from a Mac computer to a networked storage device.
--  **Portainer**: A web-based GUI for managing Docker containers and images.
--  **Watchtower**: A container that automatically updates other containers to their latest versions.
+-  **Plex**: Like Netflix for your own media files.
+-  **Overseerr**: Allows users to request new shows/movies to be downloaded.
+-  **Sonarr**: Monitors multiple RSS feeds for new episodes of TV shows and will grab, sort and rename them.
+-  **Radarr**: Monitors multiple RSS feeds for new movies and will grab, sort and rename them.
+-  **Jackett**: To find torrent trackers.
+-  **Transmission**: BitTorrent client.
+-  **Time Machine**: Wireless backups for your Mac.
+-  **Portainer**: GUI for managing Docker containers and images.
+-  **Watchtower**: Automatically updates other containers to their latest versions.
 
 ![diagram](./diagram.png)
