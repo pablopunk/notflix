@@ -115,3 +115,11 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    restart: always
+    environment:
+      - API_KEY=$CLOUDFLARE_API_KEY
+      - ZONE=$CLOUDFLARE_ZONE
+      - SUBDOMAIN=$CLOUDFLARE_SUBDOMAIN
+      - PROXIED=false
