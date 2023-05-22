@@ -21,7 +21,7 @@ server {
 #   ssl_certificate_key /etc/letsencrypt/live/${CLOUDFLARE_DOMAIN}/privkey.pem;
 
 #   location / {
-#     proxy_pass $scheme://$server_addr:32400
+#     proxy_pass $scheme://$server_addr:32400;
 #     proxy_set_header Host $host;
 #     proxy_set_header X-Real-IP $remote_addr;
 #     proxy_set_header X-Forwarded-Proto $scheme;
@@ -29,15 +29,12 @@ server {
 #   }
 # }
 #
-# server {
-#   listen 443 ssl;
-#   server_name overseerr.${CLOUDFLARE_DOMAIN};
 
 #   ssl_certificate     /etc/letsencrypt/live/${CLOUDFLARE_DOMAIN}/fullchain.pem;
 #   ssl_certificate_key /etc/letsencrypt/live/${CLOUDFLARE_DOMAIN}/privkey.pem;
 
 #   location / {
-#     proxy_pass $scheme://$server_addr:5055
+#     proxy_pass $scheme://$server_addr:5055;
 #     proxy_set_header Host $host;
 #     proxy_set_header X-Real-IP $remote_addr;
 #     proxy_set_header X-Forwarded-Proto $scheme;

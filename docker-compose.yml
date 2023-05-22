@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   plex:
     image: linuxserver/plex
@@ -115,22 +115,14 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  cloudflare-ddns-plex:
+  cloudflare-ddns:
     image: oznu/cloudflare-ddns:latest
+    container_name: cloudflare-ddns
     restart: always
     environment:
       - API_KEY=$CLOUDFLARE_API_KEY
       - ZONE=$CLOUDFLARE_DOMAIN
-      - SUBDOMAIN=plex
-      - PROXIED=true
-  cloudflare-ddns-overseerr:
-    image: oznu/cloudflare-ddns:latest
-    restart: always
-    environment:
-      - API_KEY=$CLOUDFLARE_API_KEY
-      - ZONE=$CLOUDFLARE_DOMAIN
-      - SUBDOMAIN=overseerr
-      - PROXIED=true
+      - PROXIED=false
   nginx:
     image: nginx
     container_name: nginx
@@ -144,12 +136,12 @@ services:
     environment:
       - CLOUDFLARE_DOMAIN=$CLOUDFLARE_DOMAIN
       - LOCAL_IP=$LOCAL_IP
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - $CONFIG_ROOT/cerbot/conf:/etc/letsencrypt
-      - $CONFIG_ROOT/certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email $CERTBOT_EMAIL -d $CLOUDFLARE_DOMAIN --agree-tos
-    environment:
-      - CERTBOT_EMAIL=$CERTBOT_EMAIL
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - $CONFIG_ROOT/cerbot/conf:/etc/letsencrypt
+  #     - $CONFIG_ROOT/certbot/www:/var/www/certbot
+  #   command: certonly --webroot -w /var/www/certbot --force-renewal --email $CERTBOT_EMAIL -d $CLOUDFLARE_DOMAIN --agree-tos
+  #   environment:
+  #     - CERTBOT_EMAIL=$CERTBOT_EMAIL
