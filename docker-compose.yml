@@ -122,4 +122,4 @@ services:
       - API_KEY=$CLOUDFLARE_API_KEY
       - ZONE=$CLOUDFLARE_ZONE
       - SUBDOMAIN=$CLOUDFLARE_SUBDOMAIN
-      - PROXIED=false
+      - PROXIED=true
