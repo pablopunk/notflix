@@ -1,0 +1,28 @@
+version: '3'
+services:
+  timemachine:
+    image: odarriba/timemachine
+    container_name: timemachine
+    restart: unless-stopped
+    volumes:
+      - $TIMEMACHINE_ROOT:/timemachine
+    ports:
+      - 548:548
+      - 636:636
+    environment:
+      - AFP_SIZE_LIMIT=250000
+      - AFP_NAME=Backups
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    ports:
+      - 9000:9000
+    volumes:
+      - $CONFIG_ROOT/portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

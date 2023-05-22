@@ -1,0 +1,32 @@
+version: '3'
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    container_name: cloudflare-ddns
+    restart: always
+    environment:
+      - API_KEY=$CLOUDFLARE_API_KEY
+      - ZONE=$CLOUDFLARE_DOMAIN
+      - PROXIED=false
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/templates # needs to be a template, as we're using env variables inside https://github.com/docker-library/docs/tree/master/nginx#using-environment-variables-in-nginx-configuration-new-in-119
+      - $CONFIG_ROOT/certbot/conf:/etc/letsencrypt
+      - $CONFIG_ROOT/certbot/www:/var/www/certbot
+    environment:
+      - CLOUDFLARE_DOMAIN=$CLOUDFLARE_DOMAIN
+      - LOCAL_IP=$LOCAL_IP
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - $CONFIG_ROOT/cerbot/conf:/etc/letsencrypt
+  #     - $CONFIG_ROOT/certbot/www:/var/www/certbot
+  #   command: certonly --webroot -w /var/www/certbot --force-renewal --email $CERTBOT_EMAIL -d $CLOUDFLARE_DOMAIN --agree-tos
+  #   environment:
+  #     - CERTBOT_EMAIL=$CERTBOT_EMAIL

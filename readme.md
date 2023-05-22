@@ -12,15 +12,17 @@ First, copy the example `.env` and modify it to fit your needs.
 cp .env.example .env
 ```
 
-Now run it:
+Now run the apps you want
 
 ```bash
-docker-compose up
+docker-compose up -f docker-compose.plex.yml -d # media server
+docker-compose up -f docker-compose.hosting.yml -d # nginx with custom server
+docker-compose up -f docker-compose.utils.yml -d # other utils
 ```
 
 ## Features
 
-### Minimum media server needs
+### `plex`: Minimum media server needs
 
 -  **Plex**: Like Netflix for your own media files.
 -  **Overseerr**: Allows users to request new shows/movies to be downloaded.
@@ -29,13 +31,13 @@ docker-compose up
 -  **Jackett**: To find torrent trackers.
 -  **Transmission**: BitTorrent client.
 
-### Using a custom domain
+### `hosting`: Use a custom domain
 
 -  **Cloudflare DDNS**: Automatically updates your Cloudflare DNS records to point to your home IP.
 -  **Nginx**: Reverse proxy server to securely access your services over HTTPS.
 -  **Certbot**: Automatically obtains and renews SSL/TLS certificates from Let's Encrypt.
 
-### Additional features
+### `utils`: Additional features
 
 -  **Time Machine**: Wireless backups for your Mac.
 -  **Portainer**: GUI for managing Docker containers and images.
