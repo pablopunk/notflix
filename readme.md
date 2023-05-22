@@ -20,12 +20,23 @@ docker-compose up
 
 ## Features
 
+### Minimum media server needs
+
 -  **Plex**: Like Netflix for your own media files.
 -  **Overseerr**: Allows users to request new shows/movies to be downloaded.
 -  **Sonarr**: Monitors multiple RSS feeds for new episodes of TV shows and will grab, sort and rename them.
 -  **Radarr**: Monitors multiple RSS feeds for new movies and will grab, sort and rename them.
 -  **Jackett**: To find torrent trackers.
 -  **Transmission**: BitTorrent client.
+
+### Using a custom domain
+
+-  **Cloudflare DDNS**: Automatically updates your Cloudflare DNS records to point to your home IP.
+-  **Nginx**: Reverse proxy server to securely access your services over HTTPS.
+-  **Certbot**: Automatically obtains and renews SSL/TLS certificates from Let's Encrypt.
+
+### Additional features
+
 -  **Time Machine**: Wireless backups for your Mac.
 -  **Portainer**: GUI for managing Docker containers and images.
 -  **Watchtower**: Automatically updates other containers to their latest versions.
