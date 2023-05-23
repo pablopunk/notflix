@@ -22,7 +22,7 @@ docker-compose up -f docker-compose.utils.yml -d # other utils
 
 ## Features
 
-### `plex`: Minimum media server needs
+### `plex`: Media server
 
 -  **Plex**: Like Netflix for your own media files.
 -  **Overseerr**: Allows users to request new shows/movies to be downloaded.
