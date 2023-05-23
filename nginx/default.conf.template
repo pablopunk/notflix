@@ -5,7 +5,7 @@ server {
   server_name ${CLOUDFLARE_DOMAIN};
 
   location / {
-    proxy_pass $scheme://${LOCAL_IP}:32400;
+    proxy_pass $scheme://$host:32400;
   }
 
   location ~ /.well-known/acme-challenge/ {
