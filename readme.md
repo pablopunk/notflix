@@ -15,9 +15,9 @@ cp .env.example .env
 Now run the apps you want
 
 ```bash
-docker-compose up -f docker-compose.plex.yml -d # media server
-docker-compose up -f docker-compose.hosting.yml -d # nginx with custom server
-docker-compose up -f docker-compose.utils.yml -d # other utils
+docker-compose up -f docker-compose.plex.yml -d    # media server
+docker-compose up -f docker-compose.tunnel.yml -d # use a custom domain with a proxy
+docker-compose up -f docker-compose.utils.yml -d   # other utils (time machine, portainer...)
 ```
 
 ## Features
@@ -31,7 +31,7 @@ docker-compose up -f docker-compose.utils.yml -d # other utils
 -  **Jackett**: To find torrent trackers.
 -  **Transmission**: BitTorrent client.
 
-### `hosting`: Use a custom domain
+### `tunnel`: Custom domain with https
 
 -  **Cloudflare Tunnel**: Cloudflare's proxy to securely access your services over HTTPS.
 
