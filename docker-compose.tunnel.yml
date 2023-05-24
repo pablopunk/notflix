@@ -1,9 +1,5 @@
 version: '3'
 
-networks:
-  media-server:
-    external: true
-
 services:
   cloudflare-tunnel:
     image: cloudflare/cloudflared
@@ -15,4 +11,9 @@ services:
     volumes:
       - $CONFIG_ROOT/cloudflared:/etc/cloudflared
     networks:
-      - media-server
+      - server_default
+
+networks:
+  server_default:
+    external: true
+    name: server_default

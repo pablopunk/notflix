@@ -1,9 +1,5 @@
 version: '3'
 
-networks:
-  media-server:
-    external: true
-
 services:
   plex:
     image: linuxserver/plex
@@ -21,7 +17,7 @@ services:
       - TZ=$TZ
       - PLEX_CLAIM=$PLEX_CLAIM
     networks:
-      - media-server
+      - server_default
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
@@ -34,7 +30,7 @@ services:
     environment:
       - TZ=$TZ
     networks:
-      - media-server
+      - server_default
     ports:
       - 8989:8989
   radarr:
@@ -49,9 +45,25 @@ services:
     environment:
       - TZ=$TZ
     networks:
-      - media-server
+      - server_default
     ports:
       - 7878:7878
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
+    volumes:
+      - $CONFIG_ROOT/bazarr:/config
+      - $MOVIES:/movies
+      - $SHOWS:/tv
+    networks:
+      - server_default
+    ports:
+      - 6767:6767
+    restart: unless-stopped
   overseerr:
     image: sctx/overseerr:latest
     container_name: overseerr
@@ -63,7 +75,7 @@ services:
     volumes:
       - $CONFIG_ROOT/overseerr:/app/config
     networks:
-      - media-server
+      - server_default
     restart: unless-stopped
   jackett:
     image: lscr.io/linuxserver/jackett:latest
@@ -78,7 +90,7 @@ services:
       - $CONFIG_ROOT/jackett:/config
       - $CONFIG_ROOT/jackett/downloads:/downloads
     networks:
-      - media-server
+      - server_default
     ports:
       - 9117:9117
     restart: unless-stopped
@@ -100,9 +112,14 @@ services:
       - $CONFIG_ROOT/transmission/watch:/watch
       - $DOWNLOADS:/downloads
     networks:
-      - media-server
+      - server_default
     ports:
       - 9091:9091
       - 51413:51413
       - 51413:51413/udp
     restart: unless-stopped
+
+networks:
+  server_default:
+    external: true
+    name: server_default
