@@ -1,4 +1,9 @@
 version: '3'
+
+networks:
+  media-server:
+    external: true
+
 services:
   timemachine:
     image: odarriba/timemachine
@@ -20,6 +25,8 @@ services:
     volumes:
       - $CONFIG_ROOT/portainer:/data
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - media-server
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower

@@ -33,9 +33,7 @@ docker-compose up -f docker-compose.utils.yml -d # other utils
 
 ### `hosting`: Use a custom domain
 
--  **Cloudflare DDNS**: Automatically updates your Cloudflare DNS records to point to your home IP.
--  **Nginx**: Reverse proxy server to securely access your services over HTTPS.
--  **Certbot**: Automatically obtains and renews SSL/TLS certificates from Let's Encrypt.
+-  **Cloudflare Tunnel**: Cloudflare's proxy to securely access your services over HTTPS.
 
 ### `utils`: Additional features
 
