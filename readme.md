@@ -16,7 +16,7 @@ Now run the apps you want
 
 ```bash
 docker-compose up -f docker-compose.plex.yml -d    # media server
-docker-compose up -f docker-compose.tunnel.yml -d # use a custom domain with a proxy
+docker-compose up -f docker-compose.tunnel.yml -d  # use a custom domain with a proxy
 docker-compose up -f docker-compose.utils.yml -d   # other utils (time machine, portainer...)
 ```
 
