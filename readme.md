@@ -1,13 +1,13 @@
+# media server
+
+> Educational purposes only
+
 - [Requirements](#requirements)
 - [Features and
     usage](#features-and-usage)
   - [Plex Media
       server](#plex-media-server)
   - [Extras](#extras)
-
-# media server
-
-> Educational purposes only
 
 ## Requirements
 
