@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   plex:
@@ -118,6 +118,46 @@ services:
       - 51413:51413
       - 51413:51413/udp
     restart: unless-stopped
+  cloudflare-tunnel:
+    image: cloudflare/cloudflared
+    container_name: cloudflare-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=$CLOUDFLARE_TUNNEL_TOKEN
+    volumes:
+      - $CONFIG_ROOT/cloudflared:/etc/cloudflared
+    networks:
+      - server_default
+    profiles:
+      - all
+  timemachine:
+    image: odarriba/timemachine
+    container_name: timemachine
+    restart: unless-stopped
+    volumes:
+      - $TIMEMACHINE_ROOT:/timemachine
+    ports:
+      - 548:548
+      - 636:636
+    environment:
+      - AFP_SIZE_LIMIT=250000
+      - AFP_NAME=Backups
+    profiles:
+      - all
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+    volumes:
+      - $CONFIG_ROOT/portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - server_default
+    profiles:
+      - all
 
 networks:
   server_default:
