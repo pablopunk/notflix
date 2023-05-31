@@ -1,9 +1,9 @@
-> [Requirements](#requirements)
-> [Features and
-    usage](#features-and-usage){#toc-features-and-usage}
-  > [Plex Media
-      server](#plex-media-server){#toc-plex-media-server}
-  > [Extras](#extras){#toc-extras}
+- [Requirements](#requirements)
+- [Features and
+    usage](#features-and-usage)
+  - [Plex Media
+      server](#plex-media-server)
+  - [Extras](#extras)
 
 # media server
 
