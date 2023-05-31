@@ -16,6 +16,7 @@ services:
   portainer:
     image: portainer/portainer
     container_name: portainer
+    restart: unless-stopped
     ports:
       - 9000:9000
     volumes:
@@ -23,12 +24,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - server_default
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   server_default:

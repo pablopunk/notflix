@@ -39,6 +39,5 @@ docker-compose up -f docker-compose.utils.yml -d   # other utils (time machine, 
 
 -  **Time Machine**: Wireless backups for your Mac.
 -  **Portainer**: GUI for managing Docker containers and images.
--  **Watchtower**: Automatically updates other containers to their latest versions.
 
 ![diagram](./diagram.png)
