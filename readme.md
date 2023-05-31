@@ -28,6 +28,8 @@ docker-compose up -d
 -  **Jackett**: To find torrent trackers.
 -  **Transmission**: BitTorrent client.
 
+![diagram](./diagram.png)
+
 ### Extras
 
 ```bash
@@ -37,5 +39,3 @@ docker-compose --profile all up -d
 -  **Cloudflare Tunnel**: Cloudflare's proxy to securely access your services over HTTPS.
 -  **Time Machine**: Wireless backups for your Mac.
 -  **Portainer**: GUI for managing Docker containers and images.
-
-![diagram](./diagram.png)
