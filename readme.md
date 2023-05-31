@@ -1,9 +1,9 @@
-- [Requirements](#requirements){#toc-requirements}
-- [Features and
+> [Requirements](#requirements)
+> [Features and
     usage](#features-and-usage){#toc-features-and-usage}
-  - [Plex Media
+  > [Plex Media
       server](#plex-media-server){#toc-plex-media-server}
-  - [Extras](#extras){#toc-extras}
+  > [Extras](#extras){#toc-extras}
 
 # media server
 
@@ -11,8 +11,8 @@
 
 ## Requirements
 
--   [Docker](https://www.docker.com/)
--   [Docker Compose](https://docs.docker.com/compose/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 Copy the example `.env` and modify it to fit your needs.
 
@@ -28,15 +28,15 @@ cp .env.example .env
 docker-compose up -d
 ```
 
--   **Plex**: Like Netflix for your own media files.
--   **Overseerr**: Allows users to request new shows/movies to be
+- **Plex**: Like Netflix for your own media files.
+- **Overseerr**: Allows users to request new shows/movies to be
     downloaded.
--   **Sonarr**: Monitors multiple RSS feeds for new episodes of TV shows
+- **Sonarr**: Monitors multiple RSS feeds for new episodes of TV shows
     and will grab, sort and rename them.
--   **Radarr**: Monitors multiple RSS feeds for new movies and will
+- **Radarr**: Monitors multiple RSS feeds for new movies and will
     grab, sort and rename them.
--   **Jackett**: To find torrent trackers.
--   **Transmission**: BitTorrent client.
+- **Jackett**: To find torrent trackers.
+- **Transmission**: BitTorrent client.
 
 ![diagram](./diagram.png)
 
@@ -46,7 +46,7 @@ docker-compose up -d
 docker-compose --profile all up -d
 ```
 
--   **Cloudflare Tunnel**: Cloudflare's proxy to securely access your
+- **Cloudflare Tunnel**: Cloudflare's proxy to securely access your
     services over HTTPS.
--   **Time Machine**: Wireless backups for your Mac.
--   **Portainer**: GUI for managing Docker containers and images.
+- **Time Machine**: Wireless backups for your Mac.
+- **Portainer**: GUI for managing Docker containers and images.
