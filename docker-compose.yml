@@ -123,6 +123,8 @@ services:
     container_name: cloudflare-tunnel
     restart: unless-stopped
     command: tunnel run
+    ports:
+      - 7844:7844/udp
     environment:
       - TUNNEL_TOKEN=$CLOUDFLARE_TUNNEL_TOKEN
     networks:
