@@ -119,14 +119,12 @@ services:
       - 51413:51413/udp
     restart: unless-stopped
   cloudflare-tunnel:
-    image: cloudflare/cloudflared
+    image: erisamoe/cloudflared
     container_name: cloudflare-tunnel
     restart: unless-stopped
-    command: tunnel --no-autoupdate run
+    command: tunnel run
     environment:
       - TUNNEL_TOKEN=$CLOUDFLARE_TUNNEL_TOKEN
-    volumes:
-      - $CONFIG_ROOT/cloudflared:/etc/cloudflared
     networks:
       - server_default
     profiles:
