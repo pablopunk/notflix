@@ -73,9 +73,9 @@ Once the project is installed and running, you can access the following services
 
 If you encounter any issues while installing or using the media server, try the following solutions:
 
--   Check that all dependencies are installed correctly.
--   Ensure that the `.env` file is configured correctly.
--   Check the logs of the Docker containers (in portainer, port 9000) for any error messages.
+- Check that all dependencies are installed correctly.
+- Ensure that the `.env` file is configured correctly.
+- Check the logs of the Docker containers (in portainer, port 9000) for any error messages.
 
 ## License
 
