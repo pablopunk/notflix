@@ -3,9 +3,9 @@
 > Educational purposes only.
 
 This project allows users to stream their own media files and includes
-additional features such as automated downloading of TV shows
-and movies, a BitTorrent client, and a GUI for managing Docker
-containers and images.
+  additional features such as automated downloading of TV shows
+  and movies, a BitTorrent client, and a GUI for managing Docker
+  containers and images.
 
 ## Installation
 
@@ -60,6 +60,7 @@ Once the project is installed and running, you can access the following services
     and will grab, sort and rename them.
 - **Radarr**: Monitors multiple RSS feeds for new movies and will
     grab, sort and rename them.
+- **Bazarr**: Automatically download subtitles in your desired languages.
 - **Jackett**: To find torrent trackers.
 - **Transmission**: BitTorrent client.
 - **Cloudflare Tunnel**: Cloudflare's proxy to securely access your
