@@ -1,35 +1,39 @@
-# media server
+# Media Server
 
-> Educational purposes only
+This project is an educational media server for personal use. It allows users to stream their own media files and includes additional features such as automated downloading of TV shows and movies, a BitTorrent client, and a GUI for managing Docker containers and images.
 
-- [Requirements](#requirements)
-- [Features and
-    usage](#features-and-usage)
-  - [Plex Media
-      server](#plex-media-server)
-  - [Extras](#extras)
+## Installation
 
-## Requirements
+Before installing the project, ensure that you have the following dependencies installed:
 
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
+-   [Docker](https://www.docker.com/)
+-   [Docker Compose](https://docs.docker.com/compose/)
 
-Copy the example `.env` and modify it to fit your needs.
+To install the project, follow these steps:
+
+1. Clone the repository to your local machine.
+
+``` bash
+git clone https://github.com/pablopun/server && cd server
+```
+
+2. Copy the example `.env` file and modify it to fit your needs:
 
 ``` bash
 cp .env.example .env
 ```
 
-Build and run all the images.
+3. Build and run all the images:
 
 ``` bash
 docker-compose up -d
 ```
 
-> **Note**
-> If you don't want one of those (e.g. Time Machine, etc), just remove it from `docker-compose.yml`
+> **Note:** If you don't want to use a particular service, such as Time Machine, simply remove it from the `docker-compose.yml` file.
 
-All services are available through `http://<host>:<port>`.
+## Usage
+
+Once the project is installed and running, you can access the following services at the specified ports:
 
 | Service          | Port   |
 |------------------|--------|
@@ -42,11 +46,6 @@ All services are available through `http://<host>:<port>`.
 | Transmission     | 9091   |
 | Portainer        | 9000   |
 
-
-## Features
-
-### Plex Media server
-
 - **Plex**: Like Netflix for your own media files.
 - **Overseerr**: Allows users to request new shows/movies to be
     downloaded.
@@ -56,12 +55,22 @@ All services are available through `http://<host>:<port>`.
     grab, sort and rename them.
 - **Jackett**: To find torrent trackers.
 - **Transmission**: BitTorrent client.
-
-![diagram](./diagram.png)
-
-### Extras
-
 - **Cloudflare Tunnel**: Cloudflare's proxy to securely access your
     services over HTTPS.
 - **Time Machine**: Wireless backups for your Mac.
 - **Portainer**: GUI for managing Docker containers and images.
+
+![diagram](./diagram.png)
+
+## Troubleshooting
+
+If you encounter any issues while installing or using the media server, try the following solutions:
+
+-   Check that all dependencies are installed correctly.
+-   Ensure that the `.env` file is configured correctly.
+-   Check the logs of the Docker containers (in portainer, port 9000) for any error messages.
+
+## License
+
+MIT License
+
