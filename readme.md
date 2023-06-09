@@ -1,13 +1,18 @@
 # Media Server
 
-This project is an educational media server for personal use. It allows users to stream their own media files and includes additional features such as automated downloading of TV shows and movies, a BitTorrent client, and a GUI for managing Docker containers and images.
+> Educational purposes only.
+
+This project allows users to stream their own media files and includes
+additional features such as automated downloading of TV shows
+and movies, a BitTorrent client, and a GUI for managing Docker
+containers and images.
 
 ## Installation
 
 Before installing the project, ensure that you have the following dependencies installed:
 
--   [Docker](https://www.docker.com/)
--   [Docker Compose](https://docs.docker.com/compose/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 To install the project, follow these steps:
 
@@ -29,7 +34,9 @@ cp .env.example .env
 docker-compose up -d
 ```
 
-> **Note:** If you don't want to use a particular service, such as Time Machine, simply remove it from the `docker-compose.yml` file.
+> **Note**
+> If you don't want to use a particular service, such as Time Machine, simply remove it from the `docker-compose.yml` file.
+
 
 ## Usage
 
