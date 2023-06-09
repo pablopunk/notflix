@@ -129,8 +129,6 @@ services:
       - TUNNEL_TOKEN=$CLOUDFLARE_TUNNEL_TOKEN
     networks:
       - my_network
-    profiles:
-      - all
   timemachine:
     image: odarriba/timemachine
     container_name: timemachine
@@ -143,8 +141,6 @@ services:
     environment:
       - AFP_SIZE_LIMIT=250000
       - AFP_NAME=Backups
-    profiles:
-      - all
   portainer:
     image: portainer/portainer
     container_name: portainer
@@ -156,8 +152,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - my_network
-    profiles:
-      - all
 
 networks:
   my_network:

@@ -20,13 +20,32 @@ Copy the example `.env` and modify it to fit your needs.
 cp .env.example .env
 ```
 
-## Features and usage
-
-### Plex Media server
+Build and run all the images.
 
 ``` bash
 docker-compose up -d
 ```
+
+> **Note**
+> If you don't want one of those (e.g. Time Machine, etc), just remove it from `docker-compose.yml`
+
+All services are available through `http://<host>:<port>`.
+
+| Service          | Port   |
+|------------------|--------|
+| Plex             | 32400  |
+| Sonarr           | 8989   |
+| Radarr           | 7878   |
+| Bazarr           | 6767   |
+| Overseerr        | 5055   |
+| Jackett          | 9117   |
+| Transmission     | 9091   |
+| Portainer        | 9000   |
+
+
+## Features
+
+### Plex Media server
 
 - **Plex**: Like Netflix for your own media files.
 - **Overseerr**: Allows users to request new shows/movies to be
@@ -41,10 +60,6 @@ docker-compose up -d
 ![diagram](./diagram.png)
 
 ### Extras
-
-``` bash
-docker-compose --profile all up -d
-```
 
 - **Cloudflare Tunnel**: Cloudflare's proxy to securely access your
     services over HTTPS.
