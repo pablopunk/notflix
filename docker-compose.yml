@@ -2,20 +2,22 @@ version: '3.9'
 
 services:
   plex:
-    image: linuxserver/plex
+    image: lscr.io/linuxserver/plex:latest
     container_name: plex
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
+      - VERSION=docker
+      - PLEX_CLAIM=$PLEX_CLAIM
     volumes:
       - $CONFIG_ROOT/plex:/config
       - $CONFIG_ROOT/plex/transcoding:/data/transcode
-      - $MOVIES:/data/movies
-      - $SHOWS:/data/tv
+      - $SHOWS:/tv
+      - $MOVIES:/movies
     ports:
       - 32400:32400
     restart: unless-stopped
-    environment:
-      - VERSION=docker
-      - TZ=$TZ
-      - PLEX_CLAIM=$PLEX_CLAIM
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
