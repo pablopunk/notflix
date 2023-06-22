@@ -18,7 +18,7 @@ To install the project, follow these steps:
 1. Clone the repository to your local machine.
 
 ``` bash
-git clone https://github.com/pablopun/notflix && cd notflix
+git clone https://github.com/pablopunk/notflix && cd notflix
 ```
 
 2. Copy the example `.env` file and modify it to fit your needs:
