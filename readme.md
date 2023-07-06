@@ -40,7 +40,7 @@ Once the project is installed and running, you can access the following services
 
 | Service          | Port   |
 |------------------|--------|
-| Plex             | 32400  |
+| Jellyfin         | 8096   |
 | Overseerr        | 5055   |
 | Sonarr           | 8989   |
 | Radarr           | 7878   |
@@ -51,7 +51,7 @@ Once the project is installed and running, you can access the following services
 To link containers, e.g. **Overseerr+Sonarr**, in the Overseerr configuration you can
 specify the **container name** instead of the host IP: `http://sonarr:8989`.
 
-- **Plex**: Like Netflix for your own media files.
+- **Jellyfin**: Like Netflix for your own media files.
 - **Overseerr**: Allows users to request new shows/movies to be
     downloaded.
 - **Sonarr**: Monitors multiple RSS feeds for new episodes of TV shows
@@ -62,7 +62,7 @@ specify the **container name** instead of the host IP: `http://sonarr:8989`.
 - **Jackett**: To find torrent trackers.
 - **Transmission**: BitTorrent client.
 
-![diagram](./diagram.png)
+<!-- ![diagram](./diagram.png) -->
 
 ## Troubleshooting
 

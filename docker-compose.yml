@@ -1,22 +1,33 @@
 version: '3.9'
 
 services:
-  plex:
-    image: lscr.io/linuxserver/plex:latest
-    container_name: plex
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=$TZ
-      - VERSION=docker
-      - PLEX_CLAIM=$PLEX_CLAIM
     volumes:
-      - $CONFIG_ROOT/plex:/config
-      - $CONFIG_ROOT/plex/transcoding:/data/transcode
-      - $SHOWS:/tv
-      - $MOVIES:/movies
+      - $CONFIG_ROOT/jellyfin:/config
+      - $SHOWS:/data/tvshows
+      - $MOVIES:/data/movies
     ports:
-      - 32400:32400
+      - 8096:8096
+      - 8920:8920 #optional
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional
+    restart: unless-stopped
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=$TZ
+    ports:
+      - 5055:5055
+    volumes:
+      - $CONFIG_ROOT/jellyseerr:/app/config
     restart: unless-stopped
   sonarr:
     image: linuxserver/sonarr
@@ -53,18 +64,6 @@ services:
       - $SHOWS:/tv
     ports:
       - 6767:6767
-    restart: unless-stopped
-  overseerr:
-    image: lscr.io/linuxserver/overseerr:latest
-    container_name: overseerr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=$TZ
-    ports:
-      - 5055:5055
-    volumes:
-      - $CONFIG_ROOT/overseerr:/app/config
     restart: unless-stopped
   jackett:
     image: lscr.io/linuxserver/jackett:latest
