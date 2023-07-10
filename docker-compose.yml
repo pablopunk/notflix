@@ -25,6 +25,8 @@ services:
     restart: unless-stopped
     networks:
       - mynetwork
+    devices:
+     - "/dev/dri:/dev/dri" # Intel QSV
 
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
