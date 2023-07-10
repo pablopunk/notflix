@@ -50,6 +50,8 @@ services:
       - $DOWNLOADS:/downloads
       - $SHOWS:/tv
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=$TZ
     ports:
       - 8989:8989
@@ -64,6 +66,8 @@ services:
       - $DOWNLOADS:/downloads
       - $MOVIES:/movies
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=$TZ
     ports:
       - 7878:7878
