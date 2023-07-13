@@ -15,6 +15,7 @@ services:
       - TZ=$TZ
     volumes:
       - $CONFIG_ROOT/jellyfin:/config
+      - $STORAGE_ROOT/data/jellyfin/data:/config/data
       - $SHOWS:/data/tvshows
       - $MOVIES:/data/movies
     ports:
