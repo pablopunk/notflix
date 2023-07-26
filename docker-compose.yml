@@ -46,6 +46,7 @@ services:
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
+    restart: unless-stopped
     volumes:
       - $CONFIG_ROOT/sonarr:/config
       - $DOWNLOADS:/downloads
