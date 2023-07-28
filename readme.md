@@ -2,9 +2,9 @@
 
 > Educational purposes only.
 
-This project allows users to stream their own media files and includes
-  additional features such as automated downloading of TV shows
-  and movies, and a BitTorrent client. [Here's how it works](#how-the-f-does-this-work).
+This project allows users to stream their own media files and automate
+  downloads of TV shows and movies with a BitTorrent client.
+  [Here's how it works](#how-the-f-does-this-work).
 
 ## Installation
 
