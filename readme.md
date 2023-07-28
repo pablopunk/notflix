@@ -4,7 +4,7 @@
 
 This project allows users to stream their own media files and includes
   additional features such as automated downloading of TV shows
-  and movies, and a BitTorrent client.
+  and movies, and a BitTorrent client. [Here's how it works](#how-the-f-does-this-work).
 
 ## Installation
 
@@ -51,7 +51,7 @@ Once the project is installed and running, you can access the following services
 To link containers, e.g. **Overseerr+Sonarr**, in the Overseerr configuration you can
 specify the **container name** instead of the host IP: `http://sonarr:8989`.
 
-- **Jellyfin**: Like Netflix for your own media files.
+- **Jellyfin**: Like Netflix for your own media files. You can also use Plex, it's basically the same.
 - **Overseerr**: Allows users to request new shows/movies to be
     downloaded.
 - **Sonarr**: Monitors multiple RSS feeds for new episodes of TV shows
@@ -62,7 +62,15 @@ specify the **container name** instead of the host IP: `http://sonarr:8989`.
 - **Jackett**: To find torrent trackers.
 - **Transmission**: BitTorrent client.
 
-<!-- ![diagram](./diagram.png) -->
+## How the f does this work
+
+### Big picture
+
+![small](./diagram-small.png)
+
+### Detailed version
+
+![full](./diagram-full.png)
 
 ## Troubleshooting
 
